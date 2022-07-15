@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-2">
+    <div class="container">
+      <a class="navbar-brand">SISTEMA CULTIVO HIDROPONICO</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          {{#if user}}
+            
+          {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Ingresar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/registro">Registrar</a>
+            </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card mt-4 bg-dark text-white">
+        <div class="card-header text-center">
+          <h1 class="h4 text-white">
+            Ingresar al sistema
+          </h1>
+        </div>
+        
+        <div class="card-body">
+          <form action="/ingresar" method="POST">
+            <div class="mb-3">
+              <label for="email">Email:</label>
+              <input
+                type="email" class="form-control" name="email" placeholder="Email" autofocus required/>
+            </div>
+            <div class="mb-3">
+              <label for="passswore">Password:</label>
+              <input type="password" class="form-control" name="contraseña" placeholder="contraseña" required
+              />
+            </div>
+            <button class="btn btn-primary btn-block">
+              Signin
+            </button>
+          </form>
+        </div>
+  
+        <p class="text-center">Don't Have an Account? <a href="/registro" class="text-info">Register</a></p>
+      </div>
+    </div>
+  </div>
+</header>
+<body>
+  
+</body>
+</html>

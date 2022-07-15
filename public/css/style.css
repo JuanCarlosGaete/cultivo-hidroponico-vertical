@@ -1,0 +1,22 @@
+/* estilo btn guarda*/
+
+.btn-guardar{
+    width: 100%;
+    padding: 15px;
+    background-color:blue;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    color: aliceblue;
+
+}
+.btn-guardar:hover,.btn-guardar:active{
+    color: aliceblue;
+    background-color: rgb(7, 7, 158);
+    border-color:rgb(7, 7, 158);
+}
+.btn-guardar:focus{
+    box-shadow: 0 0 0 3px rgba(121, 82, 179, 0.25);
+}

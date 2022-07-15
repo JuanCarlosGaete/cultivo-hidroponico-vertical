@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <style>
+        .container{
+            max-width: 960px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-2">
+        
+        <a class="navbar-brand">SISTEMA CULTIVO HIDROPONICO</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Monitoreo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="cultivo">Cultivos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="tipoHortaliza">Tipos Hortalizas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Cosecha</a>
+              </li>
+            </ul>
+          </div>
+          <ul class="navbar-nav ms-auto">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/registro">Registrar</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </nav>
+</header>
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h2>Listado de tipos de hortalizas</h2>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+                <a type="button" class="btnAgregarTipo btn btn-success bi bi-plus-circle"> Agregar nuevo tipo de hortaliza</a>
+                
+                <br>
+                <br>
+                <table id="tablaTipoHortalizas" class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th style="display: none;">Id</th>
+                            <th>Nombre</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% tipoHortalizas.forEach((tipoHortaliza) =>{ %>
+                            <tr>
+                                <td style="display: none;"><%= tipoHortaliza._id %></td>
+                                <td><%= tipoHortaliza.nombre %></td>
+                                <td>
+                                    <a type="button" class="btnEditarTipo btn btn-outline-warning bi bi-pencil"></a>
+                                    <a href="/borrar/<%= tipoHortaliza.id %>" class="btn btn-outline-danger bi bi-trash"></a>
+                                </td>
+                            </tr>
+                            <%}) %>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modalTipoHortaliza" class="modal fade" tabindex="-1" aria-labelledby="modalTipoHortaliza" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-white">
+            <h5 class="modal-title" id="exampleModalLabel">Editar Tipo de Hortaliza</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form action="/editar" method="POST">
+                <input name="id_editar" id="id_editar" type="text" hidden>
+                <div class="mb-3">
+                <label for="nombre_editar" class="col-form-label">Nombre:</label>
+                <input id="nombre_editar" name="nombre_editar" type="text" class="form-control" value="">
+                </div>
+                
+            
+            </div>
+            <div class="modal-footer">              
+            <button type="submit" class="btn btn-warning">Actualizar</button>
+            </div>
+        </form>
+        </div>
+        </div>
+    </div>
+    <div id="modalAgregarTipoHortaliza" class="modal fade" tabindex="-1" aria-labelledby="modalAgregarTipoHortaliza" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="exampleModalLabel">Agregar Nuevo Tipo de Hortaliza</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form action="/crear" method="POST">
+                <div class="mb-3">
+                <label for="nombre" class="col-form-label">Nombre:</label>
+                <input id="nombre" name="nombre" type="text" class="form-control" required>
+                </div>
+                
+            
+            </div>
+            <div class="modal-footer">              
+            <button type="submit" class="btn btn-success">Agregar</button>
+            </div>
+        </form>
+        </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="js/codeTipoHortaliza.js"></script>
+</body>
+
+</html>
