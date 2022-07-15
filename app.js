@@ -30,6 +30,9 @@ app.use(cultivo)
 const autentificacion = require('./routes/autentificacion')
 app.use(autentificacion)
 
+const datoMedioAmbiental = require('./routes/datosMedioAmbientales')
+app.use(datoMedioAmbiental)
+
 const menu = require('./routes/menu')
 app.use(menu)
 
