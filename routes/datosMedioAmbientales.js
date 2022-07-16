@@ -1,8 +1,16 @@
 const express = require('express')
 const router = express.Router()
 
-const datoMedioAmbientalController = require('../controllers/datoMedioAmbiental')
+router.post("/datoMedioAmbiental", (req, res)=>{
+    const datoMedioAmbiental = datoMediambientalSchema(req.body);
+    datoMedioAmbiental
+        .save()
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error}));
+})
 
-router.get('/datoMedioAmbiental', datoMedioAmbientalController.crear)
 
 module.exports = router
+
+//crear tipo_hortaliza
+
