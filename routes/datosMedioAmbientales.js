@@ -1,7 +1,23 @@
-const express = require('express')
-const router = express.Router()
+// const express = require('express')
+// const router = express.Router()
 
- router.post("/datoMedioAmbiental", (req, res)=>{
+// //const datoMedioAmbientalSchema = require("../model/DatoMedioAmbiental")
+
+// const datoMedioAmbientalController = require('../controllers/datoMedioAmbientalController')
+
+// router.post('/datoMedioAmbiental', datoMedioAmbientalController.crearDatoMedioAmbiental )
+
+// module.exports = router
+
+
+const express = require("express");
+const datoMediambientalSchema = require("../model/DatoMedioAmbiental");
+
+const router = express.Router();
+
+//crear 
+
+router.post("/datoMediAmbiental", (req, res)=>{
     const datoMedioAmbiental = datoMediambientalSchema(req.body);
     datoMedioAmbiental
         .save()
@@ -9,13 +25,4 @@ const router = express.Router()
         .catch((error) => res.json({ message: error}));
 })
 
- module.exports = router
-
-// const datoMedioAmbientalController = require('../controllers/datoMedioAmbientalController')
-
-// router.post('/datoMedioAmbiental', datoMedioAmbientalController.crear )
-
-// module.exports = router
-
-
-
+module.exports = router;
