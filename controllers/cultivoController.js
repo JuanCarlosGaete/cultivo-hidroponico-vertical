@@ -23,15 +23,7 @@ module.exports.mostrar = (req, res)=>{
                 message: 'Error al encontrar cultivos'
             })
         }
-        TipoHortaliza.find({}, (error, tipoHortalizas) =>{
-            if(error){
-                return res.status(500).json({
-                    message: 'Error al encontrar hortalzias'
-                })
-            }
-            return res.render('cultivo', {tipoHortalizas, tipoHortalizas})
-        })
-        return res.render('cultivo', {cultivos, cultivos}, {tipoHortalizas, tipoHortalizas})
+        return res.render('cultivo', {cultivos, cultivos})
     })
 }
 //Crear
