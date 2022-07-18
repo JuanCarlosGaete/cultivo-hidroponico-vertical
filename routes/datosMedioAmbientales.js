@@ -11,18 +11,18 @@
 
 
 const express = require("express");
-const datoMediambientalSchema = require("../model/DatoMedioAmbiental");
-
 const router = express.Router();
+const datoMedioAmbientalController = require('../controllers/datoMedioAmbientalController')
 
-//crear 
 
-router.post("/datoMediAmbiental", (req, res)=>{
-    const datoMedioAmbiental = datoMediambientalSchema(req.body);
-    datoMedioAmbiental
-        .save()
-        .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error}));
-})
+router.post('/datoMedioAmbiental', datoMedioAmbientalController.crearDatoMedioAmbiental)
+
+// router.post("/datoMediAmbiental", (req, res)=>{
+//     const datoMedioAmbiental = datoMediambientalSchema(req.body);
+//     datoMedioAmbiental
+//         .save()
+//         .then((data) => res.json(data))
+//         .catch((error) => res.json({ message: error}));
+// })
 
 module.exports = router;
