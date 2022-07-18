@@ -13,7 +13,11 @@ const cultivoSchema = new Schema({
     fechaInicio:{
         type: Date,
         required:true
-    }
+    },
+    tipoHortaliza:[{
+        type: mongoose.Types.ObjectId, ref:'tipoHortaliza',
+        required:true
+    }],
     
 });
 
