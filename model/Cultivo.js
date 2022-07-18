@@ -14,10 +14,10 @@ const cultivoSchema = new Schema({
         type: Date,
         required:true
     },
-    tipoHortaliza:[{
-        type: mongoose.Types.ObjectId, ref:'tipoHortaliza',
+    tipoHortaliza:{
+        type: SVGStringList,
         required:true
-    }],
+    },
     
 });
 
