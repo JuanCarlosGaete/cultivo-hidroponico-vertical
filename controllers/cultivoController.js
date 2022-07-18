@@ -34,7 +34,7 @@ module.exports.crearCultivo = (req, res)=>{
         lote: req.body.lote,
         cantidad: req.body.cantidad,
         fechaInicio: req.body.fechaInicio,
-        tipoHortaliza: req.body.tipoHortaliza
+        tipo: req.body.tipo
     })
     cultivo.save(function(error,cultivo){
         if(error){

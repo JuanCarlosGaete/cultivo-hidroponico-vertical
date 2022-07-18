@@ -14,7 +14,7 @@ const cultivoSchema = new Schema({
         type: Date,
         required:true
     },
-    tipoHortaliza:{
+    tipo:{
         type: String,
         required:true
     },
