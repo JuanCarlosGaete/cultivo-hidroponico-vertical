@@ -33,8 +33,7 @@ module.exports.crearCultivo = (req, res)=>{
     const cultivo = new Cultivo({
         lote: req.body.lote,
         cantidad: req.body.cantidad,
-        fechaInicio: req.body.fechaInicio,
-        tipo: req.body.tipo
+        fechaInicio: req.body.fechaInicio
     })
     cultivo.save(function(error,cultivo){
         if(error){

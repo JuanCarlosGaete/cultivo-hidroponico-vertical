@@ -13,11 +13,7 @@ const cultivoSchema = new Schema({
     fechaInicio:{
         type: Date,
         required:true
-    },
-    tipo:{
-        type: String,
-        required:true
-    },
+    }
     
 });
 
