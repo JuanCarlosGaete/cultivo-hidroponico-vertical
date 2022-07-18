@@ -17,6 +17,5 @@ module.exports.crear = function(req, res){
     res.status(200).jsonp(datoMedioAmbiental)
     });
 
-    return res.render('home')
          
 };
