@@ -29,9 +29,7 @@
               <li class="nav-item">
                 <a class="nav-link active" href="tipoHortaliza">Tipos Hortalizas</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Cosecha</a>
-              </li>
+              
             </ul>
           </div>
           <ul class="navbar-nav ms-auto">
@@ -69,7 +67,6 @@
                             <th>Lote</th>
                             <th>Cantidad</th>
                             <th>Fecha de Inicio</th>
-                            <th>Tipo de Hortaliza</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -80,7 +77,6 @@
                                 <td><%= cultivo.lote %></td>
                                 <td><%= cultivo.cantidad %></td>
                                 <td><%= cultivo.fechaInicio %></td>
-                                <td><%= cultivo.tipoHortaliza %></td>
 
                                 <td>
                                     <a type="button" class="btnEditarCultivo btn btn-outline-warning bi bi-pencil"></a>
@@ -149,13 +145,7 @@
                     <label for="fechaInicio" class="col-form-label">Fecha de Cultivo:</label><br>
                     <input type="datetime-local" id="fechaInicio" name="fechaInicio" value="2022-06-12T19:30" min="2018-06-07T00:00" max="2030-06-14T00:00">
                 </div>
-                <div class="mb-3">
-                    <label for="fechaInicio" class="col-form-label">Tipo de hortaliza</label>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>Seleccion el tipo de hortaliza</option>
-                        <option value="1">Lechuga</option>
-                      </select>
-                </div>
+                
                 
                    
                 
