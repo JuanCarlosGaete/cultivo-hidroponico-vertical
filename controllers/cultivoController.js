@@ -23,7 +23,7 @@ module.exports.mostrar = (req, res)=>{
                 message: 'Error al encontrar cultivos'
             })
         }
-        return res.render('cultivo', {cultivos, cultivos})
+        return res.render('cultivo', {cultivos, cultivos}, {tipoHortalizas, tipoHortalizas})
     })
 }
 //Crear

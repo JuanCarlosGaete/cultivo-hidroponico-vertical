@@ -152,8 +152,8 @@
                 <div class="mb-3">
                     <label for="fechaInicio" class="col-form-label">Tipo de hortaliza</label>
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>Seleccion el tipo de hortaliza</option>
-                        <option value="1">Lechuga</option>
+                        <option selected><% tipoHortalizas.forEach((tipoHortaliza) =>{ %></option>
+                        <option value="1"><%= tipoHortaliza._id %><%= tipoHortaliza.nombre %></option>
                       </select>
                 </div>
                 
