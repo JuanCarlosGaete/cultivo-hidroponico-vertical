@@ -7,4 +7,4 @@ const datoMedioAmbientalSchema = new Schema ({
   temperatura: Number,
 })
 
-module.exports = mongoose.model('datoMedioAmbiental', datoMedioAmbientalSchema);
+module.exports = mongoose.model('datosMediosAmbientales', datoMedioAmbientalSchema);
