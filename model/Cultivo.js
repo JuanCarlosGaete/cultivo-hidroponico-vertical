@@ -15,7 +15,7 @@ const cultivoSchema = new Schema({
         required:true
     },
     tipoHortaliza:{
-        type: SVGStringList,
+        type: String,
         required:true
     },
     
